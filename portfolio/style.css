@@ -115,40 +115,39 @@ header {
     }
 }
 /* DEMO-SPECIFIC STYLES */
-.typewriter{
+.typewriter {
     color: #fff;
     font-family: monospace;
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid rgb(97, 2, 108); /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em; /* Adjust as needed */
-    animation: 
-      typing 3.5s steps(30, end),
-      blink-caret .5s step-end infinite;
-  }
-  
-  /* The typing effect */
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-  }
-  
-  /* The typewriter cursor effect */
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: rgb(153, 62, 238) }
-  }
+    display: inline-block; /* S'assurer que l'élément occupe juste la largeur de son contenu */
+    overflow: hidden; /* Cacher le texte au début */
+    border-right: .15em solid rgb(97, 2, 108); /* Curseur */
+    white-space: nowrap; /* Forcer tout le texte sur une ligne */
+    letter-spacing: .15em; /* Espacement des lettres */
+    animation: typing 2.5s steps(30, end), blink-caret .5s step-end infinite;
+}
 
+/* Animation pour la saisie du texte */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; } /* On anime jusqu'à 100% de la longueur du texte */
+}
+
+/* Animation pour le clignotement du curseur */
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: rgb(153, 62, 238); }
+}
 h1 {
     /* position: relative; */
     /* left: -100%; */
     /* opacity: 0; */
     font-size: 3rem;
+    font-family: monospace;
     margin-bottom: 1rem;
     color: white;
     text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Ombre portée légère pour effet de brillance */
     transition: transform 0.4s ease, color 0.4s ease;
+
 }
 header p{
     position:relative;
@@ -345,4 +344,24 @@ footer {
 /* Fixer la barre de navigation */
 body {
     padding-top: 0; /* Assure qu'il n'y a pas d'espace entre la nav et le header */
+}
+
+@media (max-width:750px) {
+    
+     .typewriter {
+        font-size: 2rem;
+        letter-spacing: 0.1em;
+        transition: 300ms;
+      }
+
+}
+
+@media (max-width:400px) {
+.intro h1{
+    white-space: normal;
+    transition: 300ms;
+}
+.intro{
+    width: 50%;
+}
 }
