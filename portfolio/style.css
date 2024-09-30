@@ -36,6 +36,7 @@ nav ul {
 
 nav ul li {
     display: inline;
+    white-space: nowrap;
 }
 
 nav ul li a {
@@ -67,11 +68,13 @@ header {
 /* Section d'introduction */
 .intro {
     animation: fadeIn 1.5s ease-out;
-    max-width: 80%;
+    max-width: 100%;
     margin: auto;
+    width: 100%;
     /* background: rgba(62, 31, 92, 0.5); Fond semi-transparent pour contraste */
     padding: 20px;
     border-radius: 8px;
+
 }
 @keyframes slideIn {
     0% {
@@ -130,7 +133,7 @@ header {
 /* Animation pour la saisie du texte */
 @keyframes typing {
     from { width: 0; }
-    to { width: 100%; } /* On anime jusqu'à 100% de la longueur du texte */
+    to { width: 20ch; } /* On anime jusqu'à 100% de la longueur du texte */
 }
 
 /* Animation pour le clignotement du curseur */
@@ -144,16 +147,16 @@ h1 {
     /* opacity: 0; */
     font-size: 3rem;
     font-family: monospace;
-    margin-bottom: 1rem;
+    margin-bottom: 5rem;
     color: white;
     text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Ombre portée légère pour effet de brillance */
     transition: transform 0.4s ease, color 0.4s ease;
-
 }
 header p{
     position:relative;
     left: -100%;
     opacity: 0;
+    margin-bottom: 5rem;
 }
 
 
@@ -238,7 +241,7 @@ p {
 
 /* Project Section */
 .h2_projet{
-    margin-bottom: 2%;
+    margin-bottom: 6%;
     font-size: 2em;
 }
 .projects {
@@ -248,10 +251,13 @@ p {
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-areas: 'case1 case2 case3';
     gap: 30px;
     margin: 0 50px;
 }
+.case1{grid-area: case1;}
+.case2{grid-area: case2;}
+.case3{grid-area: case3;}
 
 .project {
     border-radius: 8px;
@@ -260,11 +266,13 @@ p {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre portée */
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
+.project h3{
+    padding-top: 15px;
+}
 
 .project:hover h3{
 color: #6d28d9;
-transition: 200ms;
-    
+transition: 200ms; 
 }
 
 .project img {
@@ -287,6 +295,9 @@ transition: 200ms;
 .contact {
     background-color: #b39ddb; /* Violet Clair */
     padding: 80px 0;
+}
+.contact h2{
+    padding-bottom: 4%;
 }
 
 form {
@@ -352,17 +363,51 @@ body {
      .typewriter {
         font-size: 2rem;
         letter-spacing: 0.1em;
-        transition: 300ms;
+        transition: 200ms;
       }
+      .project-grid {
+        margin: 0;
+        grid-template-rows:1fr 1fr 1fr;
+        grid-template-areas: 'case1'
+                            'case2'
+                            'case3';
+        gap: 20px;
+        width: 100%;
+        
+    }
+
+}
+
+@media (max-width:629px) {
 
 }
 
 @media (max-width:400px) {
+    nav ul li a{
+        font-size: 0.80rem;
+    }
 .intro h1{
-    white-space: normal;
-    transition: 300ms;
+    /* white-space: normal; */
+    transition: 200ms;
+    
 }
-.intro{
-    width: 50%;
+
 }
+@media (max-width:360px) {
+    .intro h1{
+        font-size: 1.5rem;
+        transition: 200ms;
+    }
+
+    .intro p{
+        font-size: 1rem;
+        transition: 200ms;
+
+    }
+    nav ul {
+        gap: 15px;
+        transition: 200ms;
+    }
+    
+
 }
