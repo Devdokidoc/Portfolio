@@ -389,6 +389,16 @@ body {
         letter-spacing: 0.1em;
         transition: 200ms;
       }
+      footer {
+        text-align: center;
+        padding: 20px 10px;
+        background-color: #3e1f5c; /* Violet Foncé */
+        color: white;
+    }
+    footer p{
+        font-size: 1rem;
+    }
+    
 
 }
 
@@ -400,6 +410,9 @@ body {
     /* white-space: normal; */
     transition: 200ms;
     
+}
+footer p{
+    font-size: 0.75rem;
 }
 
 }
