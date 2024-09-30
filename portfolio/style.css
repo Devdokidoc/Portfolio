@@ -72,6 +72,37 @@ header {
     padding: 20px;
     border-radius: 8px;
 }
+@keyframes slideIn {
+    0% {
+        left: -100%;
+        opacity: 0;
+    }
+    100% {
+        left: 0;
+        opacity: 1;
+    }
+}
+.slide-in {
+    animation: slideIn 2s ease-out forwards;
+}
+/* .glitch {
+    font-size: 3em;
+    position: relative;
+    color: rgb(82, 3, 94);
+    animation: glitch 2s infinite;
+}
+
+@keyframes glitch {
+    0% {
+        text-shadow: 2px 2px rgb(189, 8, 235);
+    }
+    50% {
+        text-shadow: -2px -2px rgb(10, 10, 28);
+    }
+    100% {
+        text-shadow: 2px 2px rgb(58, 6, 79);
+    }
+} */
 
 @keyframes fadeIn {
     from {
@@ -83,13 +114,46 @@ header {
         transform: translateY(0);
     }
 }
+/* DEMO-SPECIFIC STYLES */
+.typewriter{
+    color: #fff;
+    font-family: monospace;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid rgb(97, 2, 108); /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(30, end),
+      blink-caret .5s step-end infinite;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: rgb(153, 62, 238) }
+  }
 
 h1 {
+    /* position: relative; */
+    /* left: -100%; */
+    /* opacity: 0; */
     font-size: 3rem;
     margin-bottom: 1rem;
     color: white;
     text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Ombre portée légère pour effet de brillance */
     transition: transform 0.4s ease, color 0.4s ease;
+}
+header p{
+    position:relative;
+    left: -100%;
+    opacity: 0;
 }
 
 
@@ -173,6 +237,10 @@ p {
     
 
 /* Project Section */
+.h2_projet{
+    margin-bottom: 2%;
+    font-size: 2em;
+}
 .projects {
     background-color: #f4f4f4; /* Fond neutre pour les projets */
     padding: 80px 0;

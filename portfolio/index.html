@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Portfolio de Mathieu Argibay</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
     <script src="script.js" defer ></script>
@@ -21,13 +22,13 @@
             </ul>
         </nav>
         <div class="intro">
-            <h1>Mathieu Argibay</h1>
-            <p>Développeur Web</p>
+            <h1 class="typewriter">Mathieu Argibay</h1>
+            <p class="slide-in">Développeur Web</p>
             <a href="#projects" class="cta-button">Voir mes Projets</a>
         </div>
     </header>
 
-    <section id="about" class="section about">
+    <section id="about" class="section about " >
         <h2>À propos de moi</h2>
         <p>Ancien militaire, j'ai cultivé rigueur, discipline et réactivité, j'ai su transformer ces qualités pour relever des défis techniques et créatifs en tant que développeur et designer.
             <br>Passionné par les interfaces innovantes et esthétiques, je me spécialise dans la création d'expériences visuelles uniques, alliant tons vibrants et animations fluides.
@@ -38,27 +39,27 @@
     </section>
 
     <section id="projects" class="section projects">
-        <h2>Mes Projets</h2>
+        <h2 class="h2_projet">Mes Projets</h2>
         <div class="project-grid">
-            <div class="project">
+            <div class="project"  data-aos="zoom-out-right">
                 <img src="./img/gestionCommerciale.png" alt="Projet 1">
                 <h3>Application web de gestion commerciale</h3>
                 <p>Une application web avec des fonctionnalités de base de données</p>
             </div>
-            <div class="project">
+            <div class="project" data-aos="zoom-out-up">
                 <!-- <img src="project2.jpg" alt="Projet 2"> -->
                 <h3>A venir</h3>
                 <p>Un site de portfolio interactif avec des transitions dynamiques.</p>
             </div>
-            <div class="project">
-                <img src="./img/fleurs.png" alt="Projet 3">
+            <div class="project" data-aos="zoom-out-left">
+                <img src="/img/fleurs.png" alt="Projet 3">
                 <h3>Boutique en ligne</h3>
                 <p>Design d'une boutique en ligne avec une interface utilisateur innovante.</p>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="section contact">
+    <section id="contact" class="section contact" >
         <h2>Contactez-moi</h2>
         <form id="contact-form">
             <input type="text" name="name" placeholder="Votre nom" required>
@@ -72,7 +73,10 @@
     <footer>
         <p>2024 &copy; Mathieu Argibay - Tous droits réservés</p>
     </footer>
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>
