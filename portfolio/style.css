@@ -222,6 +222,22 @@ p {
     color: #333;
 }
 
+#about p span:not(:last-child):after {
+    content: "";
+    display: block;
+    width: 80px; /* Longueur de la ligne */
+    height: 2px; /* Épaisseur de la ligne */
+    margin: 20px auto; /* Centrer avec un espace vertical */
+    background-color: #6d28d9; /* Couleur violet clair */
+    transition: width 0.4s ease, background-color 0.4s ease; /* Transition douce pour l'effet */
+}
+
+#about p span:hover:after {
+    width: 120px; /* Agrandir la ligne au survol */
+    background-color: #3e1f5c; /* Changer la couleur au survol */
+}
+
+
 
 #about h2 {
     color: #333;
@@ -432,5 +448,17 @@ footer p{
         transition: 200ms;
     }
     
+
+}
+@media screen and (max-height : 500px){
+
+    .intro h1{
+        margin-bottom: 1rem;
+        transition: 200ms;
+    }
+    .intro p{
+        transition: 200ms;
+        margin-bottom: 1.5rem;
+    }
 
 }
